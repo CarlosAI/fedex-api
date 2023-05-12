@@ -39,10 +39,6 @@ module Fedex
 
       def build_request(credentials, rate_params)
         template = ERB.new(File.read(File.join(TEMPLATES_DIR, 'request_template.xml.erb')))
-        puts "params son"
-        puts credentials
-        puts rate_params
-        puts template
         xml = template.result(binding)
 
         request = Net::HTTP::Post.new(URI.parse(URL))
