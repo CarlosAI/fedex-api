@@ -65,7 +65,7 @@ rate_params = {
 
 ```
 
-For more details consult [Fedex ocs](https://developer.fedex.com/api/en-us/catalog/rate/v1/docs.html)
+For more details consult [Fedex docs](https://developer.fedex.com/api/en-us/catalog/rate/v1/docs.html)
 
 ## Running the Tests
 
