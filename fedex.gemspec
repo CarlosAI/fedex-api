@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "A Ruby interface to the FedEx API."
   spec.description = "A Ruby gem that provides a simple and flexible way to access the FedEx API."
-  spec.homepage = "" # or put the URL of your gem's homepage here
+  spec.homepage = "https://github.com/CarlosAI/fedex-api" # or put the URL of your gem's homepage here
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
