@@ -1,0 +1,65 @@
+<RateRequest
+  xmlns="http://fedex.com/ws/rate/v13">  
+  <WebAuthenticationDetail>    
+    <UserCredential>      
+      <Key><%= credentials["fedex_key"] %></Key>      
+      <Password><%= credentials["fedex_password"] %></Password>    
+    </UserCredential>  
+  </WebAuthenticationDetail>  
+  <ClientDetail>    
+    <AccountNumber><%= credentials["fedex_account_number"] %></AccountNumber>    
+    <MeterNumber><%= credentials["fedex_meter_number"] %></MeterNumber>    
+    <Localization>      
+      <LanguageCode>es</LanguageCode>      
+      <LocaleCode>mx</LocaleCode>    
+    </Localization>  
+  </ClientDetail>  
+  <Version>    
+    <ServiceId>crs</ServiceId>    
+    <Major>13</Major>    
+    <Intermediate>0</Intermediate>    
+    <Minor>0</Minor>  
+  </Version>  
+  <ReturnTransitAndCommit>true</ReturnTransitAndCommit>  
+  <RequestedShipment>    
+    <DropoffType>REGULAR_PICKUP</DropoffType>    
+    <PackagingType>YOUR_PACKAGING</PackagingType>    
+    <Shipper>      
+      <Address>        
+        <StreetLines><%= rate_params["address_from"]["street_name"] %></StreetLines>        
+        <City><%= rate_params["address_from"]["city"] %></City>        
+        <StateOrProvinceCode><%= rate_params["address_from"]["state_or_province_code"] %></StateOrProvinceCode>        
+        <PostalCode><%= rate_params["address_from"]["zip"] %></PostalCode>        
+        <CountryCode><%= rate_params["address_from"]["country"] %></CountryCode>      
+      </Address>    
+    </Shipper>    
+    <Recipient>      
+      <Address>        
+        <StreetLines><%= rate_params["address_to"]["street_name"] %></StreetLines>        
+        <City><%= rate_params["address_to"]["city"] %></City>        
+        <StateOrProvinceCode><%= rate_params["address_to"]["state_or_province_code"] %></StateOrProvinceCode>        
+        <PostalCode><%= rate_params["address_to"]["zip"] %></PostalCode>        
+        <CountryCode><%= rate_params["address_to"]["country"] %></CountryCode>        
+        <Residential>true</Residential>      
+      </Address>    
+    </Recipient>    
+    <ShippingChargesPayment>      
+      <PaymentType>SENDER</PaymentType>    
+    </ShippingChargesPayment>    
+    <RateRequestTypes>ACCOUNT</RateRequestTypes>    
+    <PackageCount>1</PackageCount>    
+    <RequestedPackageLineItems>      
+      <GroupPackageCount>1</GroupPackageCount>      
+      <Weight>        
+        <Units><%= rate_params["parcel"]["mass_unit"] %></Units>        
+        <Value><%= rate_params["parcel"]["weight"] %></Value>      
+      </Weight>      
+      <Dimensions>      
+        <Length><%= rate_params["parcel"]["length"] %></Length>      
+        <Width><%= rate_params["parcel"]["width"] %></Width>      
+        <Height><%= rate_params["parcel"]["height"] %></Height>      
+        <Units><%= rate_params["parcel"]["distance_unit"] %></Units>      
+      </Dimensions>    
+    </RequestedPackageLineItems>  
+  </RequestedShipment>
+</RateRequest>
