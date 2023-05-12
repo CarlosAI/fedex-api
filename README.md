@@ -1,8 +1,6 @@
 # Fedex-API
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fedex`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Ruby gem that provides a simple and flexible way to access the FedEx API.
 
 ## Installation
 
